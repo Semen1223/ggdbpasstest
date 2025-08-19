@@ -1,0 +1,246 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('./fonts/helvetica-neue-5/HelveticaNeueLight.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face{
+  font-family: 'logo';
+  src: url(./fonts/urw-din-condensed-bold.ttf);
+  font-weight: normal;
+  font-size: normal;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background: #fff;
+  color: #222;
+  text-align: left;
+}
+
+.slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 70%; /* увеличили до 70% высоты окна */
+  margin: 0;
+  padding: 0;
+}
+
+.slider-text {
+  position: absolute;
+  top: 20%;              /* по вертикали в центр */
+  left: 50%;             /* по горизонтали в центр */
+  transform: translate(-50%, -50%); /* точный центр */
+  color: black;
+  font-size: 23px;
+  font-weight: bold;
+  z-index: 10;           /* поверх слайдов */
+}
+.slides {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+  height: 100%;
+}
+
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* выравнивание по верху */
+  height: 100%;
+}
+
+.slide img {
+  height: 100%;
+  max-width: 100%;
+  object-fit:cover;
+  display: block;
+}
+
+h1 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 28px;
+  letter-spacing: 0.05em;
+  color: #222;
+  margin-bottom: 25px;
+  text-align: left;  /* добавьте эту строку */
+  padding-left: 25px; /* для отступа от левого края страницы */
+}
+
+p {
+    font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #555;
+  padding: 0 15px;
+  line-height: 1.4em;
+  padding-left: 55px;
+  padding-right: 30px;
+}
+
+h3 {
+  font-family: 'logo', sans-serif;
+  font-size: 20px;
+  text-align: left;
+  padding-left: 55px;
+  padding-right: 30px;
+  font-weight: bold;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  letter-spacing: -0.08em;
+}
+
+p.logo{
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  text-align: left;
+  padding-left: 25px;
+  margin-top: 40px;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 50px;
+  }
+  p {
+    font-size: 17px;
+  }
+  p.logo{
+    font-size: 15px;
+  }
+  h3{
+    font-size: 25px;
+  }
+}
+.full-width-btn {
+  display: block;           /* чтобы занять всю строку */
+  width: 100vw;             /* ширина — вся ширина окна */
+  max-width: 100%;          /* на всякий случай */
+  height: 40px;             /* высота */
+  background-color: #000;   /* чёрный фон */
+  color: #fff;              /* белый текст */
+  border: none;             /* без рамки */
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 40px;        /* вертикальное центрирование текста */
+  margin: 0;                /* убрать отступы */
+  padding: 0;
+}
+p.or{
+  margin-top: 35px;
+  margin-bottom: 35px;
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+}
+.bordered-btn {
+  display: block;
+  width: calc(100vw - 30px);  /* почти во всю ширину, с полями по 15px */
+  height: 40px;
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;     /* тонкая чёрная рамка */
+  font-size: 16px;
+  cursor: pointer;
+  line-height: 40px;
+  margin: 10px auto 0;        /* сверху небольшой отступ и центрирование */
+  padding: 0;
+  box-sizing: border-box;     /* чтобы рамка не выходила за ширину */
+}
+.gray-block {
+  margin-top: 40px;
+  background-color: #ccc;     /* серый фон */
+  width: 100vw;               /* вся ширина экрана */
+  height: 160px;              /* высота блока */
+  display: flex;
+  flex-direction: column;     /* расположение элементов сверху вниз */
+  align-items: center;        /* горизонтальное центрирование */
+  justify-content: center;    /* вертикальное центрирование */
+  position: relative;
+}
+
+.center-img {
+  max-height: 50px;           /* ограничиваем высоту картинки */
+  max-width: 100%;
+}
+
+.download-text {
+  position: absolute;
+  bottom: 5px;                /* отступ от нижнего края блока */
+  font-size: 14px;
+  color: #000;
+  text-decoration: underline; /* подчёркивание */
+  margin: 0;
+}
+.bottom-space {
+  background-color: #fff; /* белый фон */
+  height: 50px;           /* можно увеличить или уменьшить по вкусу */
+  width: 100vw;           /* на всю ширину экрана */
+}
+.slides, .slide {
+  height: 70vh; /* совпадает с высотой .slider */
+}
+.fixed-logo {
+  position:absolute;
+  top: 80px;       /* отступ сверху */
+  left: 50%;       /* центрируем */
+  transform: translateX(-50%);
+  z-index: 1000;   /* поверх всех элементов */
+  pointer-events: none; /* чтобы клики проходили сквозь логотип */
+}
+
+.fixed-logo img {
+  width: 180px; /* размер лого */
+  height: auto;
+}
+.slider-dots {
+  margin-top: -100px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.slider-dots span {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin: 0 4px;
+  background-color: #bfbbb0;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.slider-dots .active {
+  background-color: #8a8986;
+}
+.slider-footer {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.slider-line {
+  position: absolute;
+    left: 50%;
+  transform: translateX(-50%);
+  margin-top: -40px;
+  width: 50%; /* длина линии */
+  height: 1.3px; /* толщина */
+  background-color: black; /* цвет */
+}
+
+.slider-caption {
+  font-size: 12px;
+  margin-bottom: 8px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  position: absolute;
+  margin-top: -62px;
+      left: 50%;
+  transform: translateX(-50%);
+}
