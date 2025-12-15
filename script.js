@@ -67,7 +67,7 @@ function touchEnd() {
   isDragging = false;
 
   const movedBy = currentTranslate - prevTranslate;
-  const threshold = slider.offsetWidth / 2;
+  const threshold = slider.offsetWidth / 5;
 
   if (movedBy < -threshold && currentIndex < slideItems.length - 1) {
     currentIndex++;
@@ -79,3 +79,4 @@ function touchEnd() {
 
   showSlide(currentIndex);
 }
+
