@@ -27,6 +27,7 @@ body {
   height: 70%; /* увеличили до 70% высоты окна */
   margin: 0;
   padding: 0;
+  touch-action: pan-y;
 }
 
 .slider-text {
